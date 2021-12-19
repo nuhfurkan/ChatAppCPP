@@ -11,6 +11,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    printf("started\n");
     int server_fd, new_socket, valread;
     struct sockaddr_in address;
     int opt = 1;
@@ -62,6 +63,7 @@ int main(int argc, char const *argv[])
             printf("connection lost");
             break;
         }
+        printf("Client: %s \n", buffer);
         printf("> ");
         scanf(" %[^\n]", hello);
         send(new_socket , hello , strlen(hello) , 0 );
